@@ -18,6 +18,7 @@
 
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $producto->nombre_producto }}</h5>
+                            <p class="card-text text-muted mb-1">ID {{ $producto->id_producto }}</p>
 
                             <h5 class="mt-auto text-success">${{ number_format($producto->precio, 0, ',', '.') }}</h5>
 
