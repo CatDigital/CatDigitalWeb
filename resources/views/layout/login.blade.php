@@ -18,10 +18,24 @@
         <div class="card-body">
             <h3 class="card-title text-center mb-4">Iniciar Sesión</h3>
 
-            <form action="#" method="POST">
+            <div>
+                @if ($errors->any())
+                    <p>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li> {{ $error }}</li>
+                        @endforeach
+                    </ul>
+
+                    </p>
+                @endif
+            </div>
+
+            <form action="{{ route('logear') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email"
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
                         placeholder="usuario@ejemplo.com" required>
                 </div>
 

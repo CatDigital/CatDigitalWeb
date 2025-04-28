@@ -17,12 +17,19 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+    protected $table = 'usuario';
+    protected $primaryKey = 'id_user'; // 🔥 Aquí le dices cuál es la clave primaria real
     protected $fillable = [
-        'name',
+        'nombre_user',
         'email',
         'password',
+        'telefono',
+        'Rol',
+        'direccion',
+        'activo',
     ];
-
+    public $timestamps = true; // Si tienes created_at y updated_at en tu tabla
     /**
      * The attributes that should be hidden for serialization.
      *

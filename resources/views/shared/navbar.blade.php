@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href='/'>Cat Digital</a>
+        <a class="navbar-brand" href='/welcome'>Cat Digital</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,8 +20,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Proyectos</a>
                     </li>
+                    <li>
+                        <a href="{{ route('productos.index') }}" class="btn btn-success mt-4">
+                            Agregar producto
+                        </a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='/nosotros'>Nosotros</a>
+                        <a class="nav-link" href='{{ route('nosotros') }}'>Nosotros</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -35,6 +40,22 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Tu blog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Cuenta
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('logout') }}">Cerrar secion</a></li>
+
+                            @if (Auth::user()->Rol === 'admin')
+                                <a href="{{ route('users.index') }}" class="btn btn-success mt-4">
+                                    👥 Administrar Usuarios
+                                </a>
+                            @endif
+
                         </ul>
                     </li>
                 </ul>
