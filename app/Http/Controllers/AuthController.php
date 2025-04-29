@@ -66,7 +66,8 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         // 🔥 AQUI VIENE LO IMPORTANTE 🔥
-        return redirect()->route('welcome');
+        return redirect()->route('productos.listado');
+
     }
 
     public function logout()

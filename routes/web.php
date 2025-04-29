@@ -17,10 +17,10 @@ Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
 Route::middleware('auth')->group(function () {
 
     //vistas
+    Route::get('/catalogo', [ProductoController::class, 'listado'])->name('productos.listado');
     Route::get('/welcome', [AuthController::class, 'welcome'])->name('welcome');
     Route::get('/nosotros', [AuthController::class, 'nosotros'])->name('nosotros');
     Route::get('/pruebas', [AuthController::class, 'pruebas'])->name('pruebas');
-    Route::get('/catalogo', [ProductoController::class, 'listado'])->name('productos.listado');
 
 
     //acciones
