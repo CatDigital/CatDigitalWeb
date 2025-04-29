@@ -23,6 +23,12 @@ class AuthController extends Controller
         return view("layout.bienvenida");
     }
 
+    public function home()
+    {
+
+        return view("CatDigital.home");
+    }
+
 
 
     public function welcome()

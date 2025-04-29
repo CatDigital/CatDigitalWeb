@@ -11,7 +11,7 @@ use App\Http\Controllers\ProductoController;
 
 
 
-Route::get('/', [AuthController::class, 'bienvenida']);
+Route::get('/', [AuthController::class, 'home']);
 Route::get('/ingresar', [AuthController::class, 'index'])->name('login');
 Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
 
