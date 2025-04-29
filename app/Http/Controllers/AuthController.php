@@ -17,6 +17,13 @@ class AuthController extends Controller
     }
 
 
+    public function bienvenida()
+    {
+
+        return view("layout.bienvenida");
+    }
+
+
 
     public function welcome()
     {

@@ -8,10 +8,12 @@ use App\Http\Controllers\ProductoController;
 
 
 
-Route::get('/', [AuthController::class, 'index'])->name('login');
+
+
+
+Route::get('/', [AuthController::class, 'bienvenida']);
+Route::get('/ingresar', [AuthController::class, 'index'])->name('login');
 Route::post('/logear', [AuthController::class, 'logear'])->name('logear');
-
-
 
 // Rutas accesibles solo si estás logueado
 Route::middleware('auth')->group(function () {

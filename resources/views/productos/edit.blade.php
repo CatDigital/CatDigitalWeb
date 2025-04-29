@@ -33,8 +33,7 @@
 
             <div class="mb-3">
                 <label>Precio</label>
-                <input type="number" name="precio" class="form-control" value="{{ old('precio', $producto->precio) }}"
-                    required>
+                <input type="number" name="precio" class="form-control" value="{{ old('precio', $producto->precio) }}"required>
             </div>
 
             @if ($producto->img)
