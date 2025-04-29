@@ -15,7 +15,7 @@
 
 <body>
     @include('shared.navbar')
-    <main class="container mt-5 pt-5">
+    <main class="container-fluid p-0">
         @yield('contenido')
     </main>
 
