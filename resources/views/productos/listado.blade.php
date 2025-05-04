@@ -1,6 +1,7 @@
 @extends('layout.index')
 
 @section('contenido')
+   
     <div class="position-relative w-100 min-vh-100"
         style="background: url('{{ asset('img/fondo_productos.png') }}') center center / cover no-repeat fixed;">
 
@@ -32,8 +33,7 @@
                                     <h5 class="mt-auto text-success">
                                         ${{ number_format($producto->precio, 0, ',', '.') }}
                                     </h5>
-
-                                    <a href="#" class="btn btn-dark mt-2">
+                                    <a href="#" class="btn btn-dark mt-2 btn-agregar">
                                         🛒 Agregar al carrito
                                     </a>
                                 </div>
@@ -43,50 +43,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- Estilos --}}
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
-
-            .contenido-productos {
-                padding-top: 120px;
-            }
-
-            .titulo-producto {
-                font-family: 'Italianno', cursive;
-                font-size: 4rem;
-                text-align: center;
-                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-                margin-bottom: 1rem;
-            }
-
-            .card {
-                height: auto;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 15px;
-            }
-
-            .card:hover {
-                transform: scale(1.02);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            }
-
-            .card-title.titulo-producto {
-                font-size: 2rem;
-                margin-bottom: 0.5rem;
-                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-            }
-
-            .card-body {
-                padding: 1rem;
-            }
-
-            .btn-dark {
-                font-size: 0.95rem;
-                padding: 0.4rem 0.8rem;
-            }
-        </style>
 
     </div>
 @endsection

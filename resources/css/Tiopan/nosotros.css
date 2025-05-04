@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+/* Tipografía */
+.titulo-seccion {
+    font-family: 'Italianno', cursive;
+    font-size: 5rem;
+    line-height: 1.2;
+}
+
+.lead {
+    font-family: 'Italianno', cursive;
+    font-size: 2.8rem;
+    color: #5c5c5c;
+}
+
+.texto-equipo h4 {
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+}
+
+.texto-equipo p {
+    font-family: 'Italianno', cursive;
+    font-size: 2.1rem;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h5, h6 {
+    font-family: 'Italianno', cursive;
+    font-size: 2.5rem;
+}
+
+/* Contenedor de bloques */
+.bloque-equipo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.bloque-equipo.reverso {
+    flex-direction: row-reverse;
+}
+
+.imagen-equipo {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.8s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+.imagen-equipo:hover {
+    transform: rotateX(8deg) rotateZ(8deg) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.texto-equipo {
+    flex: 1;
+    min-width: 250px;
+}
+
+@media (max-width: 768px) {
+    .bloque-equipo,
+    .bloque-equipo.reverso {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titulo-seccion {
+        font-size: 3.5rem;
+    }
+
+    .lead {
+        font-size: 2rem;
+    }
+
+    .texto-equipo h4 {
+        font-size: 2.3rem;
+    }
+
+    .texto-equipo p {
+        font-size: 1.7rem;
+    }
+}

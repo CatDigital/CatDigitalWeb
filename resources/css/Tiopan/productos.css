@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenido-productos {
+    padding-top: 120px; /* espacio para navbar fija */
+    position: relative;
+    z-index: 1;
+}
+
+/* Título de la página */
+.titulo-producto {
+    font-family: 'Italianno', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Tarjetas de producto */
+.card {
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+/* Hover efecto */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Título del producto */
+.card .titulo-producto {
+    font-size: 2rem;
+    color: black;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.5rem;
+}
+
+/* Cuerpo de tarjeta */
+.card-body {
+    padding: 1rem;
+}
+
+/* Botón base */
+.btn-dark {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Botón personalizado */
+.btn-agregar {
+    font-family: 'Italianno', cursive;
+    font-size: 1.3rem;
+}
