@@ -8,6 +8,5 @@ window.addEventListener('load', () => {
         offset: 300,
         easing: 'ease-in-out'
     });
-
-    AOS.refresh(); // Refresca cuando todo está cargado
+    AOS.refresh();
 });

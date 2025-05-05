@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
-/* Tipografía */
+
+.nosotros-bg {
+    background: url('/img/fondo_productos.png') center center / cover no-repeat fixed;
+    color: white;
+    width: 100%;
+    padding: 4rem 1rem;
+}
+
 .titulo-seccion {
     font-family: 'Italianno', cursive;
     font-size: 5rem;
     line-height: 1.2;
+    margin-top: 80px; /* Aumenta este valor si aún se ve cortado */
+
 }
 
 .lead {
     font-family: 'Italianno', cursive;
     font-size: 2.8rem;
-    color: #5c5c5c;
+    color: #f1f1f1;
 }
 
 .texto-equipo h4 {
@@ -24,12 +33,6 @@
     line-height: 1.8;
 }
 
-h1, h2, h3, h5, h6 {
-    font-family: 'Italianno', cursive;
-    font-size: 2.5rem;
-}
-
-/* Contenedor de bloques */
 .bloque-equipo {
     display: flex;
     align-items: center;

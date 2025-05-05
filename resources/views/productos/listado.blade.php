@@ -1,7 +1,7 @@
 @extends('layout.index')
 
 @section('contenido')
-   
+    
     <div class="position-relative w-100 min-vh-100"
         style="background: url('{{ asset('img/fondo_productos.png') }}') center center / cover no-repeat fixed;">
 

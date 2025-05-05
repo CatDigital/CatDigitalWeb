@@ -1,61 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <title>Loginaasss</title>
-
     <meta charset="UTF-8">
+    <title>Iniciar Sesión - Tío Pan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    @vite('resources/js/app.js')
+    @vite('resources/js/login.js')
 </head>
 
-<body>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="login-title">Iniciar Sesión</h2>
 
-    <div class="card p-4" style="width: 100%; max-width: 400px;">
-        <div class="card-body">
-            <h3 class="card-title text-center mb-4">Iniciar Sesión</h3>
-
-            <div>
-                @if ($errors->any())
-                    <p>
-                    <ul>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
                         @foreach ($errors->all() as $error)
-                            <li> {{ $error }}</li>
+                            <li>{{ $error }}</li>
                         @endforeach
                     </ul>
+                </div>
+            @endif
 
-                    </p>
-                @endif
-            </div>
-
-            <form action="{{ route('logear') }}" method="POST">
+            <form action="{{ route('logear') }}" method="POST" class="login-form">
                 @csrf
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
-                        placeholder="usuario@ejemplo.com" required>
-                </div>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="********"
-                        required>
-                </div>
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" id="email" value="{{ old('email') }}" required placeholder="usuario@ejemplo.com">
 
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-                </div>
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" required placeholder="********">
 
-                <div class="text-center mt-3">
-                    <a href="#" class="text-white text-decoration-none">¿Olvidaste tu contraseña?</a>
+                <button type="submit">Ingresar</button>
+
+                <div class="forgot">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
             </form>
         </div>
     </div>
-
 </body>
-
 </html>
