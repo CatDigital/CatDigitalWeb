@@ -8,6 +8,8 @@ export default defineConfig({
             input: [
                 "resources/js/app.js",
                 "resources/css/Tiopan/navbar.css", // nueva línea
+                "resources/js/login.js",
+                "resources/css/Tiopan/usuarios.css", 
             ],
             refresh: true,
         }),

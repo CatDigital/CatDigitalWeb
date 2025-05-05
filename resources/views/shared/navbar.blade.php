@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark fixed-top navbar-custom">
     <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="/welcome">
+        <a class="navbar-brand" href="{{ route('productos.listado') }}">
             <img src="{{ asset('img/logo.png') }}" alt="Logo Tio Pan Bakery">
             <span>Tio Pan Bakery</span>
         </a>
@@ -32,46 +32,29 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <!-- Navegación -->
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a></li>
-
-                    <!-- Dropdown Servicios -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Servicios
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Tu web</a></li>
-                            <li><a class="dropdown-item" href="#">Tu tienda Online</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Tu blog</a></li>
-                        </ul>
-                    </li>
-
+                    
                     <!-- Dropdown Cuenta -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Cuenta
+                            Administrador
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="{{ route('logout') }}">Cerrar sesión</a></li>
+                            
                             @if (Auth::check() && Auth::user()->Rol === 'admin')
                                 <li>
-                                    <a href="{{ route('users.index') }}" class="btn btn-success mt-3 w-100">
-                                        👥 Administrar Usuarios
-                                    </a>
+                                  
+                                    <a class="dropdown-item" href="{{ route('users.index') }}" >Administrar Usuarios</a></li>
+                                    <a class="dropdown-item" href="{{ route('productos.index') }}" >Agregar producto</a></li>
                                 </li>
+        
                             @endif
                         </ul>
                     </li>
-
-                    <!-- Agregar producto -->
-                    <li class="nav-item mt-3">
-                        <a href="{{ route('productos.index') }}" class="btn btn-success w-100">
-                            Agregar producto
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a></li>
+          
                 </ul>
+
 
                 <!-- Buscador -->
                 <form class="d-flex mt-3" role="search">
