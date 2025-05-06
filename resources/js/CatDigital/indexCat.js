@@ -1,26 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        },
-        {
-            threshold: 0.2,
-        }
-    );
-
-    elements.forEach((element) => observer.observe(element));
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100,
+    easing: "ease-in-out",
 });
 
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 10) {
-        navbar.classList.add("navbar-shadow");
-    } else {
-        navbar.classList.remove("navbar-shadow");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Solo una vez
+            }
+        });
+    },
+    {
+        threshold: 0.2, // cuando 20% del elemento es visible
     }
+);
+
+document.querySelectorAll(".card-servicio").forEach((el) => {
+    observer.observe(el);
+});
+// Iniciar AOS como siempre
+
+// Intersection Observer personalizado
+const observert = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observert.unobserve(entry.target); // solo animar una vez
+            }
+        });
+    },
+    {
+        threshold: 0.2,
+    }
+);
+
+document.querySelectorAll(".fade-observer").forEach((el) => {
+    observert.observe(el);
 });

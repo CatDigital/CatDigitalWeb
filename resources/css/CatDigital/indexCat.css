@@ -1,13 +1,115 @@
-body {
-    font-family: "Poppins", sans-serif;
+.gif {
+    position: relative;
+    /* asegúrate que no corte el gif si sale del área */
+    z-index: 2;
+}
+
+.gif-s {
+    position: absolute;
+    top: -95px;
+    /* Eleva el gif por encima del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    /* Se asegura de estar encima del contenido */
+    width: 200px;
+    /* Ajusta según el tamaño que necesites */
+    pointer-events: none;
+    /* evita que interfiera con clics si está encima */
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+.puntas {
+    position: absolute;
+    bottom: 0px;
+    /* hace que sobresalga al div siguiente */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 0;
+    pointer-events: none;
+    /* para que no bloquee clics */
+    z-index: 5;
+}
+
+.puntas svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+    /* Invertir las puntas */
+    background: none;
+    pointer-events: none;
+}
+
+.puntassss {
+    position: absolute;
+    bottom: -100%;
+    /* hace que sobresalga al div siguiente */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 0;
+    pointer-events: none;
+    /* para que no bloquee clics */
+    z-index: 5;
+}
+
+.puntassss svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+    /* Invertir las puntas */
+    background: none;
+    pointer-events: none;
+}
+
+.puntas-invertidas {
+    bottom: 0px;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 5;
+}
+
+.puntas-invertidas svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+    /* Invertir las puntas */
+    background: none;
+    pointer-events: none;
+}
+
+/* NAVBAR PRINCIPAL -----------------------------------*/
+.logo-container {
+    width: 4rem;
+    width: 4rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .navbar-custom {
-    background-color: #0c0b28;
+    background-color: #062d6b;
     padding: 1rem 2rem;
     border-radius: 20px;
-    margin: 1.5rem auto;
-    max-width: 70%;
+    margin: 1rem auto;
+    height: 10%;
+    max-width: 90%;
     box-shadow: 0 0 20px rgba(154, 78, 255, 0.2);
 }
 
@@ -20,34 +122,41 @@ body {
 }
 
 .navbar-brand:hover {
-    color: orange !important;
+    color: #00ffe7 !important;
 }
 
 .nav-link {
     color: white !important;
     font-weight: 500;
+    font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #9a4eff !important;
+    color: #00ffe7 !important;
 }
 
 .btn-login {
-    padding: 0.5rem 1.2rem;
-    border: 2px solid #9a4eff;
-    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #00ffe7;
+    border-radius: 12px;
     color: white;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
-    font-weight: 600;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 231, 0.3);
 }
 
 .btn-login:hover {
-    background-color: #9a4eff;
-    color: white;
+    background-color: #00ffe7;
+    color: #000;
+    box-shadow: 0 0 20px #00ffe7, 0 0 40px #00ffe7 inset;
 }
 
 .navbar-toggler {
@@ -62,149 +171,365 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/*-------------------------------------------------------------------------------------------------------*/
-    .hero-section {
-    width: 100vw;
-    height: 100vh;
-    background: url("/img/arbolesDecierto.jpg") top center / cover no-repeat
-        fixed;
-    background-attachment: fixed;
+.rosamel {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 5vh;
+    color: #ffffff;
+    text-align: top;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+.rosamel:hover {
+    color: #00ffe7 !important;
+}
+
+/* MEDIA QUERIES RESPONSIVAS */
+@media (max-width: 768px) {
+    .navbar-custom {
+        padding: 0.8rem 1rem;
+        max-width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .btn-login {
+        width: auto;
+        /* evita estiramiento */
+        display: inline-block;
+        margin: 0.5rem auto;
+    }
+
+    .rosamel {
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .logo-container {
+        width: 3.5rem;
+    }
+
+    .navbar-collapse {
+        background-color: #0c0b28;
+        border-radius: 0 0 10px 10px;
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #000428, #004e92);
     color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.hero-header {
+    position: relative;
+    height: 100vh;
+    background: url("/img/azula.jpg") center center / cover no-repeat fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    max-width: 700px;
-    animation: fadeInDown 1s ease;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 20px;
+    max-width: 900px;
 }
 
-.btn-primary-hero {
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: slide-in 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin-bottom: 30px;
+    animation: fade-in 2s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content .highlight {
+    color: #00ffe7;
+    font-weight: bold;
+}
+
+.btn-hero {
     display: inline-block;
     padding: 14px 35px;
-    background: linear-gradient(135deg, #007bff, #6610f2);
-    color: white;
-    border-radius: 30px;
+    border-radius: 40px;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.4s ease;
-    font-size: 1.1rem;
+    color: #000;
+    background: linear-gradient(135deg, #00ffe7, #00b5ff);
+    box-shadow: 0 4px 20px rgba(0, 255, 231, 0.4);
+    transition: all 0.3s ease;
+    animation: fade-in 2.5s ease-out forwards;
+    opacity: 0;
 }
 
-.btn-primary-hero:hover {
-    background: linear-gradient(135deg, #0056b3, #5a00b1);
-    transform: scale(1.1);
+.btn-hero:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 255, 231, 0.6);
+    color: #111;
 }
 
-/*-------------------------------------------------------------------------------------------------------*/
+/* Animaciones personalizadas */
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-.servicios-section {
-    background: url("/img/decierto.jpg") center center / cover no-repeat fixed;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Sección de servicios -----------------------*/
+
+.top {
+    margin-top: 0rem;
+}
+
+.servicios {
+    padding: 0px;
+    height: 100vh;
+    background: url("/img/azulabsc.jpg") center center / cover no-repeat fixed;
+}
+
+.servicios h2 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 13vh;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px 0px 100px 0px;
+    font-weight: 500;
 }
 
 .card-servicio {
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s, box-shadow 0.4s;
-    height: 100%;
-}
+    padding: 2rem 1rem;
+    text-align: center;
+    color: rgb(55, 0, 138);
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 255, 231, 0.1);
+    backdrop-filter: blur(4px);
 
-.titulo-servicio {
-    color: #ffffff;
-    /* o el color que prefieras */
-}
-
-.card-servicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.card-servicio i {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-/*-------------------------------------------------------------------------------------------------------*/
-
-.cta-section {
-    background: url("/img/arbolesDecierto.jpg") top center / cover no-repeat
-        fixed;
-    color: white;
-}
-
-
-
-
-.scroll-image-section {
-    height: 60vh;
-    background: url("/img/azul.jpg") center center / cover no-repeat fixed;
-    position: relative;
-}
-
-
-
-.footer-section {
-    background: #222;
-    color: #bbb;
-    font-size: 0.9rem;
-}
-
-.animate-on-scroll {
+    /* animación al aparecer */
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.animate-on-scroll.active {
+.card-servicio.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.logo-container {
-    width: 5rem;
-    /* o un ancho fijo como 300px */
-    max-width: 5rem;
-    margin: 0 auto;
-    /* centrado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-servicio:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(0, 255, 231, 0.2);
 }
 
-.logo-container img {
+.card-servicio i {
+    font-size: 3rem;
+    color: #5c008e;
+    margin-bottom: 1rem;
+}
+
+/* Galería de proyectos --------------------------*/
+.topgaleri {
+    margin-top: 0rem;
+}
+
+.galeria {
+    width: 100%;
+    height: 70rem;
+    background: url("/img/azula.jpg") center center / cover no-repeat fixed;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.galeria-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.galeria-item img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
+    transition: transform 0.6s ease;
 }
 
-.rosamel {
-    font-family: "Fredericka the Great", serif;
-    font-weight: 400;
-    font-style: normal;
+.galeria-item:hover img {
+    transform: scale(1.08) rotate(1deg);
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
+/* Overlay caption */
+.galeria-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px;
+    color: #00ffe7;
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.galeria-item:hover .galeria-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto personalizado: empieza invisible y desplazado */
+.fade-observer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Cuando entra en vista, se muestra */
+.fade-observer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.topgaleri h2 {
+    font-family: "Fredericka the Great", cursive;
+    font-size: 13vh;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+    font-weight: 500;
+}
+
+/* Sección de contacto ----------------------------------*/
+.contacto {
+    position: relative;
+    padding: 100px 20px;
+    height: 50vh;
+    background: url("/img/pccolor.jpg") top center / cover no-repeat fixed;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.contacto-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.488);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.contacto-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    padding: 5px;
+}
+
+.contacto h2 {
+    margin-bottom: 0px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #00ffe7;
+    text-shadow: 0 0 15px rgba(0, 255, 231, 0.5);
+}
+
+.contacto p {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.contacto a {
+    display: inline-block;
+    padding: 12px 36px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #000;
+    background: linear-gradient(135deg, #00ffe7, #ff00ff);
+    box-shadow: 0 0 15px rgba(0, 255, 231, 0.4);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.contacto a:hover {
+    background: linear-gradient(135deg, #ff00ff, #00ffe7);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 231, 0.7), 0 0 40px #ff00ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 0.9rem;
 }
