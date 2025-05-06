@@ -1,61 +1,161 @@
+/* --- NAVBAR GENERAL --- */
 .navbar-custom {
     background-color: #000;
-    padding: 0.25rem 1rem;
+    padding: 0.6rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1045;
 }
 
-.navbar-custom .navbar-brand {
+/* --- LOGO Y TEXTO --- */
+.navbar-brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: 'Italianno', cursive;
+    gap: 0.8rem;
     color: white;
 }
 
-.navbar-custom .navbar-brand img {
-    height: 60px;
+.navbar-brand img {
+    height: 58px;
     width: auto;
+    object-fit: contain;
+    margin-bottom: 2px;
 }
 
-.navbar-custom .navbar-brand span {
-    font-size: 2.1rem;
+.navbar-brand .brand-text {
+    font-family: "Italianno", cursive !important;
+    font-size: 2.5rem;
+    color: white !important;
     line-height: 1;
-    padding-top: 5px;
+    margin-top: 2px;
 }
 
-.navbar-custom .nav-link,
-.navbar-custom .dropdown-toggle {
-    font-size: 1rem;
+/* --- ENLACES DEL MENÚ --- */
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: white !important;
+    padding: 0 0.75rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: white !important;
+}
+
+/* --- DROPDOWN ESTÁNDAR --- */
+.dropdown-menu {
+    background-color: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #222;
     color: #fff;
 }
 
-.navbar-custom .nav-link:hover,
-.navbar-custom .dropdown-toggle:hover {
-    color: #28a745;
-}
-
-.navbar-custom .dropdown-menu-dark {
-    background-color: #111;
-}
-
-.btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-}
-
+/* --- INSTAGRAM ICON --- */
 .instagram-icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: white;
+    display: flex;
+    align-items: center;
     transition: all 0.3s ease;
 }
 
-.instagram-icon:hover {
-    background: -webkit-linear-gradient(#feda75, #d62976, #962fbf, #4f5bd5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.1);
+/* --- BÚSQUEDA --- */
+form[role="search"] input {
+    background-color: transparent;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
+    color: white;
+    min-width: 180px;
+}
+
+form[role="search"] input::placeholder {
+    color: #ccc;
+}
+
+.btn-outline-light {
+    border: 1.5px solid white;
+    color: white;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: black;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+    }
+
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .navbar-brand .brand-text {
+        font-size: 2.2rem;
+    }
+
+    form[role="search"] {
+        width: 100%;
+    }
+
+    form[role="search"] input,
+    form[role="search"] .btn-outline-light {
+        width: 100%;
+    }
+
+    .navbar-collapse {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 430px) {
+    .navbar-mobile-icons {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar-toggler {
+        margin: 0 !important;
+    }
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1050;
+        min-width: 200px;
+    }
+    
 }

@@ -7,9 +7,11 @@ export default defineConfig({
         laravel({
             input: [
                 "resources/js/app.js",
+                "resources/css/app.css", 
                 "resources/css/Tiopan/navbar.css", // nueva línea
                 "resources/js/login.js",
-                "resources/css/Tiopan/usuarios.css", 
+                "resources/css/Tiopan/usuarios.css",
+                
             ],
             refresh: true,
         }),
