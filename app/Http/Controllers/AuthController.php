@@ -70,12 +70,14 @@ class AuthController extends Controller
 
     }
 
+
+
     public function logout()
     {
         Auth::logout();
-        return to_route('login');
+        return redirect()->route('login'); // o cualquier otra ruta que quieras
     }
-
+    
 
 
     public function crearAdmin()

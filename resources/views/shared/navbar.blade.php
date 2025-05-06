@@ -1,15 +1,20 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-
+    <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="{{ route('productos.listado') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="Logo Tio Pan Bakery">
-            <span class="brand-text">Tio Pan Bakery</span>
+        <a class="navbar-brand d-flex align-items-center" href="{{ route('productos.listado') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo Tio Pan Bakery" style="height: 50px;">
+            <span class="brand-text ms-2">Tio Pan Bakery</span>
         </a>
 
-        <!-- Contenido del navbar -->
-        <div class="d-flex align-items-center flex-grow-1 justify-content-end">
-            <ul class="navbar-nav mb-0 d-flex align-items-center gap-3">
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Inicio</a>
                 </li>
@@ -18,7 +23,7 @@
                 </li>
 
                 @if (Auth::check() && Auth::user()->Rol === 'admin')
-                    <li class="nav-item dropdown position-relative">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             Administrador
                         </a>
@@ -30,22 +35,38 @@
                 @endif
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
+                    <a href="#" class="nav-link text-white text-decoration-none"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Cerrar sesión
+                    </a>
+                
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
+                
+                
 
                 <!-- Instagram -->
                 <li class="nav-item">
-                    <a href="https://www.instagram.com/__tiopan.atelier" target="_blank" class="instagram-icon">
+                    <a href="https://www.instagram.com/__tiopan.atelier" target="_blank" class="nav-link">
                         <i class="bi bi-instagram"></i>
                     </a>
                 </li>
             </ul>
 
             <!-- Buscador -->
-            <form class="d-flex ms-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
+            <div class="w-100 mt-3">
+                <form class="row gx-2 gy-2 align-items-center justify-content-center" role="search">
+                    <div class="col-10 col-sm-8">
+                        <input class="form-control w-100" type="search" placeholder="Buscar" aria-label="Buscar">
+                    </div>
+                    <div class="col-6 col-sm-3 col-md-2">
+                        <button class="btn btn-outline-light w-100" type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 </nav>

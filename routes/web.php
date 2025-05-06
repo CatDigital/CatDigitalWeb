@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 
 
     //acciones
-    Route::get('logaut', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // ✅ Nueva ruta correcta
     Route::resource('productos', ProductoController::class);
 });
 
