@@ -1,10 +1,11 @@
 /* --- NAVBAR GENERAL --- */
 .navbar-custom {
-    background-color: #000;
+    background-color: #000 !important;
     padding: 0.6rem 1.5rem;
     font-family: "Poppins", sans-serif;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     z-index: 1045;
+    position: relative;
 }
 
 /* --- LOGO Y TEXTO --- */
@@ -16,7 +17,7 @@
 }
 
 .navbar-brand img {
-    height: 58px;
+    height: 50px;
     width: auto;
     object-fit: contain;
     margin-bottom: 2px;
@@ -24,7 +25,7 @@
 
 .navbar-brand .brand-text {
     font-family: "Italianno", cursive !important;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: white !important;
     line-height: 1;
     margin-top: 2px;
@@ -32,7 +33,7 @@
 
 /* --- ENLACES DEL MENÚ --- */
 .navbar-nav .nav-link {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white !important;
     padding: 0 0.75rem;
     font-weight: 500;
@@ -41,10 +42,10 @@
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: white !important;
+    color: orange !important;
 }
 
-/* --- DROPDOWN ESTÁNDAR --- */
+/* --- DROPDOWN --- */
 .dropdown-menu {
     background-color: #111;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -55,7 +56,6 @@
 .dropdown-item {
     color: white;
     padding: 0.5rem 1rem;
-    transition: background-color 0.2s ease;
 }
 
 .dropdown-item:hover {
@@ -64,40 +64,47 @@
 }
 
 /* --- INSTAGRAM ICON --- */
-.instagram-icon {
-    font-size: 1.6rem;
+.instagram-icon,
+.navbar-nav i {
+    font-size: 1.4rem;
     color: white;
-    display: flex;
-    align-items: center;
     transition: all 0.3s ease;
 }
 
 /* --- BÚSQUEDA --- */
+form[role="search"] {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
 form[role="search"] input {
     background-color: transparent;
     border: 1.5px solid white;
     border-radius: 8px;
     padding: 6px 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: white;
-    min-width: 180px;
+    min-width: 160px;
 }
 
 form[role="search"] input::placeholder {
     color: #ccc;
 }
 
-.btn-outline-light {
+form[role="search"] .btn-outline-light {
     border: 1.5px solid white;
     color: white;
-    font-weight: 600;
-    padding: 6px 18px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 6px 14px;
     border-radius: 8px;
+    margin-left: 8px;
     background-color: transparent;
     transition: all 0.3s ease;
 }
 
-.btn-outline-light:hover {
+form[role="search"] .btn-outline-light:hover {
     background-color: white;
     color: black;
 }
@@ -111,37 +118,25 @@ form[role="search"] input::placeholder {
         width: 100%;
     }
 
-    .navbar-brand img {
-        height: 50px;
-    }
-
-    .navbar-brand .brand-text {
-        font-size: 2.2rem;
+    .navbar-collapse {
+        align-items: flex-start;
     }
 
     form[role="search"] {
+        flex-direction: column;
         width: 100%;
+        gap: 0.5rem;
+        margin-left: 0;
     }
 
     form[role="search"] input,
     form[role="search"] .btn-outline-light {
         width: 100%;
-    }
-
-    .navbar-collapse {
-        align-items: flex-start;
+        margin-left: 0;
     }
 }
 
 @media (max-width: 430px) {
-    .navbar-mobile-icons {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-
     .navbar-brand {
         width: 100%;
         justify-content: center;
@@ -150,12 +145,31 @@ form[role="search"] input::placeholder {
     .navbar-toggler {
         margin: 0 !important;
     }
-    .navbar-nav .dropdown-menu {
+
+    .dropdown-menu {
         position: absolute;
         top: 100%;
         left: 0;
         z-index: 1050;
         min-width: 200px;
     }
+    .navbar-custom {
+        background-color: #000 !important;
+        background-image: none !important;
+        opacity: 1 !important;
+        padding: 0.6rem 1.5rem;
+        font-family: "Poppins", sans-serif;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        z-index: 1045;
+        position: relative;
+    }
+    .navbar-brand {
+        flex-shrink: 1;
+    }
+    
+    .navbar-toggler {
+        margin-left: auto;
+    }
+    
     
 }

@@ -1,48 +1,51 @@
 @extends('layout.index')
 
 @section('contenido')
-    
-    <div class="position-relative w-100 min-vh-100"
-        style="background: url('{{ asset('img/fondo_productos.png') }}') center center / cover no-repeat fixed;">
+    @vite('resources/css/Tiopan/listado_index.css')
 
-        {{-- Capa oscura --}}
-        <div class="position-absolute w-100 h-100 top-0 start-0" style="background-color: rgba(0, 0, 0, 0.5); z-index: 0;">
-        </div>
+    <div class="fondo-productos" style="--fondo-img: url('{{ asset('img/fondo_productos.png') }}')">
+        <div class="contenido-productos">
+            <!-- Título -->
+            <h1 class="titulo-italianno text-center">Nuestros Productos</h1>
 
-        {{-- Contenido principal --}}
-        <div class="position-relative z-1 contenido-productos" style="padding-top: 120px;">
-            <div class="container text-center">
-                <h1 class="titulo-producto text-white">Nuestros Productos</h1>
-
-                <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
-                    @foreach ($productos as $producto)
-                        <div style="width: 250px;">
-                            <div class="card h-100 shadow-lg"
-                                style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px;">
-
-                                @if ($producto->img)
-                                    <img src="{{ asset('storage/' . $producto->img) }}" class="card-img-top"
-                                        alt="{{ $producto->nombre_producto }}"
-                                        style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <!-- Productos -->
+            <div class="row justify-content-center m-0">
+                @foreach ($productos as $producto)
+                    <div class="producto-card-wrapper">
+                        <div class="producto-card" data-aos="zoom-in" data-aos-delay="100">
+                            <!-- Imagen -->
+                            <div class="producto-img-container">
+                                @if($producto->img)
+                                    <img src="{{ asset('storage/'.$producto->img) }}" 
+                                         class="producto-img"
+                                         alt="{{ $producto->nombre_producto }}">
                                 @else
-                                    <img src="#" class="card-img-top" alt="Sin Imagen">
+                                    <div class="bg-secondary h-100 d-flex align-items-center justify-content-center">
+                                        <span class="text-white">Imagen no disponible</span>
+                                    </div>
                                 @endif
+                            </div>
 
-                                <div class="card-body d-flex flex-column text-center">
-                                    <h5 class="card-title titulo-producto">{{ $producto->nombre_producto }}</h5>
-                                    <h5 class="mt-auto text-success">
-                                        ${{ number_format($producto->precio, 0, ',', '.') }}
-                                    </h5>
-                                    <a href="#" class="btn btn-dark mt-2 btn-agregar">
-                                        🛒 Agregar al carrito
-                                    </a>
-                                </div>
+                            <!-- Info -->
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $producto->nombre_producto }}</h5>
+                                <h4 class="precio-italianno mb-3">
+                                    ${{ number_format($producto->precio, 0, ',', '.') }}
+                                </h4>
+                                <button class="btn btn-agregar">
+                                     Agregar al carrito
+                                </button>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        AOS.init();
+    </script>
 @endsection

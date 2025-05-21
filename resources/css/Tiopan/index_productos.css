@@ -1,0 +1,147 @@
+/* Contenedor general */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #4e342e;
+    margin-bottom: 20px;
+}
+
+/* Botón "Agregar Producto" */
+.btn-add {
+    background-color: #6d4c41;
+    color: white;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-bottom: 15px;
+}
+
+.btn-add:hover {
+    background-color: #5a3a32;
+    transform: scale(1.02);
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+    background-color: #f1e3a2;
+    color: #3e2723;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+tbody td {
+    padding: 12px;
+    vertical-align: top;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Imagen */
+table img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de botones de acción */
+.botones-acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Formulario en botones de acción sin márgenes */
+.botones-acciones form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Botones pequeños, redondos e iguales */
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores */
+.btn-primary {
+    background-color: #f4a261;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #e76f51;
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #8d6e63;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #6d4c41;
+    transform: scale(1.05);
+}
+
+/* Responsive tabla */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border-top: none;
+    }
+
+    .botones-acciones {
+        justify-content: flex-start;
+    }
+}

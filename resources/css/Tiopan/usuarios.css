@@ -1,170 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
 
-/* Fondo general */
-.usuario-wrapper {
-    background: url('/img/fondo_productos.png') center center / cover no-repeat fixed;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 100px;
+.fuente-italianno {
+  font-family: "Italianno", cursive;
+  font-size: 3.5rem;
+  color: #4e342e;
 }
 
-/* Contenedor */
 .contenido-usuarios {
-    background-color: rgba(255, 255, 255, 0.92);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(78, 52, 46, 0.4);
-    max-width: 1100px;
-    width: 95%;
-    color: #4e342e;
+  background: rgba(255, 248, 240, 0.95);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(90, 64, 55, 0.15);
+  max-width: 1000px;
+  width: 95%;
+  margin: 30px auto;
+  color: #4e342e;
 }
 
-/* Título */
 .titulo-usuarios {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-align: center;
-    color: #b1552b;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-/* Botón crear */
 .btn-crear {
-    margin-bottom: 20px;
-    background: #d6a700;
-    color: white;
-    font-weight: bold;
-    border-radius: 30px;
-    padding: 10px 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  margin-bottom: 20px;
+  background: #6d4c41;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-crear:hover {
-    background: #b88d00;
-    transform: scale(1.05);
+  background: #5d4037;
+  transform: scale(1.05);
 }
 
-/* Tabla */
 .tabla-usuarios {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    border-radius: 15px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffaf6;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-/* Cabecera */
-.tabla-usuarios th {
-    background-color: #f8e6c1;
-    color: #4e342e;
-    font-weight: 600;
-    text-align: left;
-    padding: 12px 15px;
-}
-
-/* Celdas */
+.tabla-usuarios th,
 .tabla-usuarios td {
-    padding: 12px 15px;
-    vertical-align: middle;
-    color: #4e342e;
-    word-break: break-word;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  text-align: left;
+  color: #5d4037;
+  border-bottom: 1px solid #e0cfa9;
 }
 
-/* Columna: Nombre */
-.tabla-usuarios td:nth-child(1),
-.tabla-usuarios th:nth-child(1) {
-    width: 20%;
-    white-space: nowrap;
+.tabla-usuarios th {
+  background: #f3e5ab;
+  font-weight: bold;
+  border-bottom: 2px solid #d7c87c;
 }
 
-/* Columna: Email */
-.tabla-usuarios td:nth-child(2),
-.tabla-usuarios th:nth-child(2) {
-    min-width: 200px;
-    width: 40%;
+.tabla-usuarios tbody tr:last-child td {
+  border-bottom: none;
 }
 
-/* Columna: Rol */
-.tabla-usuarios td:nth-child(3),
-.tabla-usuarios th:nth-child(3) {
-    white-space: nowrap;
-    width: 15%;
-}
-
-/* Columna: Acciones */
-.tabla-usuarios td:nth-child(4),
-.tabla-usuarios th:nth-child(4) {
-    white-space: nowrap;
-    width: 25%;
-}
-
-/* Hover fila */
 .tabla-usuarios tbody tr:hover {
-    background-color: #fdf3dd;
-    transition: background 0.3s ease;
+  background-color: #fff3e0;
 }
 
-/* Botones */
+.acciones {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-editar,
 .btn-eliminar {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    border: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .btn-editar {
-    background-color: #c96f3f;
-    color: white;
+  background-color: #f4a261;
 }
 
 .btn-editar:hover {
-    background-color: #a8522d;
-    transform: scale(1.05);
+  background-color: #e76f51;
 }
 
 .btn-eliminar {
-    background-color: #a94442;
-    color: white;
+  background-color: #8d6e63;
 }
 
 .btn-eliminar:hover {
-    background-color: #8b2b2b;
-    transform: scale(1.05);
-}
-/* --- Animación: Aparece el fondo --- */
-.usuario-wrapper {
-    animation: fadeInFondo 1s ease forwards;
+  background-color: #6d4c41;
 }
 
-/* --- Animación: Aparece el contenido después --- */
-.contenido-usuarios {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 1s; /* Empieza después del fondo */
-}
+@media (max-width: 800px) {
+  .btn-crear {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
 
-/* --- Keyframes --- */
-@keyframes fadeInFondo {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
+  .tabla-usuarios th,
+  .tabla-usuarios td {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  .btn-editar,
+  .btn-eliminar {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
 }

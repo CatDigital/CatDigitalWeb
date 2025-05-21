@@ -3,9 +3,9 @@
     background: url('/img/fondo_productos.png') center center / cover no-repeat fixed;
     min-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    padding: 20px;
     animation: fadeInFondo 1s ease forwards;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(78, 52, 46, 0.4);
     max-width: 800px;
-    width: 95%;
+    width: 100%;
     color: #4e342e;
     opacity: 0;
     transform: translateY(30px);
@@ -40,14 +40,14 @@
     margin-bottom: 20px;
 }
 
-/* Etiquetas con fuente elegante */
+/* Etiquetas */
 label {
     font-family: 'Italianno', cursive;
     font-size: 1.6rem;
     color: #4e342e;
 }
 
-/* Inputs de formulario */
+/* Inputs y selects */
 .formulario-input {
     font-family: 'Poppins', sans-serif;
     background-color: #fdf3dd;
@@ -57,6 +57,8 @@ label {
     font-size: 1rem;
     color: #4e342e;
     transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .formulario-input:focus {
@@ -65,7 +67,7 @@ label {
     outline: none;
 }
 
-/* Botones agrupados */
+/* Contenedor de botones */
 .botones-form {
     margin-top: 30px;
     display: flex;
@@ -73,28 +75,46 @@ label {
     justify-content: center;
 }
 
-/* Botón guardar */
-.btn-crear {
-    font-family: 'Poppins', sans-serif;
-    background: #d6a700;
-    color: white;
-    font-weight: bold;
-    border-radius: 30px;
-    padding: 10px 25px;
+/* Botones base idénticos */
+.boton-form {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 10px 25px !important;
+    min-width: 140px !important;
+    height: 48px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    border: none !important;
+    border-radius: 30px !important;
+    cursor: pointer;
     transition: all 0.3s ease;
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Guardar */
+.btn-crear {
+    background-color: #f4a261;
+    color: white;
 }
 
 .btn-crear:hover {
-    background: #b88d00;
+    background-color: #b88d00;
     transform: scale(1.05);
 }
 
-/* Botón cancelar */
-.btn-secondary {
-    font-family: 'Poppins', sans-serif;
-    border-radius: 30px;
-    font-weight: bold;
+/* Cancelar */
+.btn-cancelar {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
 }
 
 /* Animaciones */

@@ -1,6 +1,8 @@
 @extends('layout.index')
 
 @section('contenido')
+    @vite('resources/css/Tiopan/nosotros.css')
+
     <div class="nosotros-bg w-100 py-5" style="min-height: 100vh;">
         <div class="container">
             @php

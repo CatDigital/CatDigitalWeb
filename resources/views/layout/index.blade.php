@@ -5,7 +5,7 @@
     <title>Tio Pan Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{-- Vite --}}
+    {{-- Archivos Vite --}}
     @vite(['resources/js/app.js'])
 
     {{-- Bootstrap Icons --}}
@@ -18,13 +18,19 @@
     {{-- Google Fonts --}}
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body">
+
+    {{-- Navbar --}}
     @include('shared.navbar')
 
-    <main class="container-fluid p-0">
+    {{-- Contenido principal sin container que limite --}}
+    <main>
         @yield('contenido')
     </main>
 
+    {{-- Scripts adicionales opcionales --}}
     @yield('scripts')
+
 </body>
 </html>
